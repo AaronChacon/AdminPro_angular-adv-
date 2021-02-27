@@ -15,6 +15,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { ChartPrimaryComponent } from './pages/chart-primary/chart-primary.component';
+import { PagesComponent } from './pages/pages.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ChartPrimaryComponent } from './pages/chart-primary/chart-primary.compo
     HeaderComponent,
     ProgressComponent,
     ChartPrimaryComponent,
+    PagesComponent,
   ],
   imports: [
     BrowserModule,

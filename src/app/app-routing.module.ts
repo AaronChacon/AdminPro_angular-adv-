@@ -8,14 +8,24 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { ChartPrimaryComponent } from './pages/chart-primary/chart-primary.component';
 import { NotpagefoundComponent } from './pages/notpagefound/notpagefound.component';
+import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'login', component: LoginComponent },
+
+  { 
+    path: '', 
+    component: PagesComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'progress', component: ProgressComponent },
+      { path: 'chartPrimary', component: ChartPrimaryComponent },
+      { path: '', redirectTo:'/dashboard', pathMatch: 'full'},
+    ] 
+  },
+  
   { path: 'register', component: RegisterComponent },
-  { path: 'progress', component: ProgressComponent },
-  { path: 'chartPrimary', component: ChartPrimaryComponent },
-  { path: '', redirectTo:'/dashboard', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+
   { path: '**', component: NotpagefoundComponent}
 ]
 
