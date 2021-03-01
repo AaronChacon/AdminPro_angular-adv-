@@ -11,9 +11,6 @@ import { ProgressComponent } from './progress/progress.component';
 
 
 
-
-
-
 @NgModule({
   declarations: [
     DashboardComponent,
