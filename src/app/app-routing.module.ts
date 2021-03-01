@@ -7,8 +7,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { ChartPrimaryComponent } from './pages/chart-primary/chart-primary.component';
-import { NotpagefoundComponent } from './pages/notpagefound/notpagefound.component';
 import { PagesComponent } from './pages/pages.component';
+import { NotpagefoundComponent } from './notpagefound/notpagefound.component';
 
 const routes: Routes = [
 
@@ -22,7 +22,6 @@ const routes: Routes = [
       { path: '', redirectTo:'/dashboard', pathMatch: 'full'},
     ] 
   },
-  
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 
