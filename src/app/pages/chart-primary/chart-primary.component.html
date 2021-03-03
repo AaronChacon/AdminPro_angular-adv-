@@ -1,1 +1,43 @@
-<p>chart-primary works!</p>
+<div class="row">
+    <div class="col-6">
+        <app-doughnut 
+            [title]="data1.title" 
+            [Label]="data1.label"
+            [Dataset]="data1.set"
+            [Colors]="data1.colors"
+            >
+        </app-doughnut>
+    </div>
+     
+    <div class="col-6">
+        <app-doughnut 
+            [title]="data2.title" 
+            [Label]="data2.label"
+            [Dataset]="data2.set"
+            [Colors]="data2.colors"
+            >
+        </app-doughnut>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <app-doughnut 
+            [title]="data3.title" 
+            [Label]="data3.label"
+            [Dataset]="data3.set"
+            [Colors]="data3.colors"
+            >
+        </app-doughnut>
+    </div>
+     
+    <div class="col-6">
+        <app-doughnut 
+            [title]="data4.title" 
+            [Label]="data4.label"
+            [Dataset]="data4.set"
+            [Colors]="data4.colors"
+            >
+        </app-doughnut>
+    </div>
+</div>
