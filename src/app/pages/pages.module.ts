@@ -12,6 +12,7 @@ import { ChartPrimaryComponent } from './chart-primary/chart-primary.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -21,6 +22,7 @@ import { ProgressComponent } from './progress/progress.component';
     ProgressComponent,
     ChartPrimaryComponent,
     PagesComponent,
+    AccountSettingsComponent,
 
   ],
   imports: [
@@ -35,6 +37,7 @@ import { ProgressComponent } from './progress/progress.component';
     ProgressComponent,
     ChartPrimaryComponent,
     PagesComponent,
+    AccountSettingsComponent
     
   ]
 })
