@@ -9,19 +9,17 @@ export class SettingsService {
   private url = localStorage.getItem('theme');
 
   constructor() {
-    console.log('Settings services init');
-    
   }
 
   getTheme() {
     if (this.url === '' || this.url === null ||  this.url === undefined) {
-      console.log(this.url);
+      //console.log(this.url);
       this.url = '/assets/css/colors/default-dark.css'
       this.stylesheet.setAttribute('href', this.url);
       localStorage.setItem('theme', this.url);
 
     } else {
-      console.log(this.url);
+      //console.log(this.url);
       this.stylesheet.setAttribute('href', this.url);
     }
   } 

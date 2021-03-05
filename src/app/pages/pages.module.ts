@@ -13,6 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromiseComponent } from './promise/promise.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -23,6 +25,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     ChartPrimaryComponent,
     PagesComponent,
     AccountSettingsComponent,
+    PromiseComponent,
+    RxjsComponent,
 
   ],
   imports: [

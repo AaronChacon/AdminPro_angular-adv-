@@ -33,9 +33,14 @@
                         </span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li  *ngFor="let children of item.children">
-                            <a [routerLink]="children.url">{{ children.title }} </a>
-                        </li>
+                        <ng-container *ngFor="let children of item.children">
+                            <li>
+                                <a 
+                                    [routerLink]="children.url" 
+                                    [routerLinkActive]="'active'" 
+                                    [routerLinkActiveOptions]="{exact: true}" >{{ children.title }} </a>
+                            </li>
+                        </ng-container>
                     </ul>
                 </li>
             </ul>
