@@ -11,6 +11,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { ChartPrimaryComponent } from './chart-primary/chart-primary.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromiseComponent } from './promise/promise.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
           { path: 'account-settings', component: AccountSettingsComponent, data:{title: 'Account settings'}, },
           { path: 'promise', component: PromiseComponent, data:{title: 'Promise'}, },
           { path: 'rxjs', component: RxjsComponent, data:{title: 'Rxjs'}, },
+          { path: 'profile', component: ProfileComponent, data:{title: 'Profile'}, },
         ] 
     },
 ];

@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
     this.auth2.attachClickHandler(element, {},
         (googleUser) => {
           var id_token = googleUser.getAuthResponse().id_token;
-          console.log(id_token);
+          // console.log(id_token);
           this.userService.loginGoogle( id_token )
             .subscribe(resp => {
               this.ngZone.run(() => {
