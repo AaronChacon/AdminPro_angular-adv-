@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private FileUploadService: FileUploadService,
+    private fileUploadService: FileUploadService,
   ) {
     this.user = userService.user;
     
@@ -74,7 +74,7 @@ export class ProfileComponent implements OnInit {
   }
 
   uploadFile(){
-    this.FileUploadService.updatePhoto( this.uploadImage, 'users', this.user.uid )
+    this.fileUploadService.updatePhoto( this.uploadImage, 'users', this.user.uid )
       .then(file => {
         console.log(file);
         this.user.img = file;

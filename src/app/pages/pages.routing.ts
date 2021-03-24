@@ -12,6 +12,7 @@ import { ChartPrimaryComponent } from './chart-primary/chart-primary.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromiseComponent } from './promise/promise.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsersComponent } from './maintenance/users/users.component';
 
 
 
@@ -28,6 +29,9 @@ const routes: Routes = [
           { path: 'promise', component: PromiseComponent, data:{title: 'Promise'}, },
           { path: 'rxjs', component: RxjsComponent, data:{title: 'Rxjs'}, },
           { path: 'profile', component: ProfileComponent, data:{title: 'Profile'}, },
+    
+          // Maintenance
+          { path: 'users', component: UsersComponent, data:{title: 'Users'}, },
         ] 
     },
 ];
