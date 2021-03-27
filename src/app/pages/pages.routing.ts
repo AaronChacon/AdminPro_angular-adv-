@@ -13,6 +13,9 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromiseComponent } from './promise/promise.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './maintenance/users/users.component';
+import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
+import { DoctorsComponent } from './maintenance/doctors/doctors.component';
+import { DoctorComponent } from './maintenance/doctors/doctor.component';
 
 
 
@@ -31,7 +34,10 @@ const routes: Routes = [
           { path: 'profile', component: ProfileComponent, data:{title: 'Profile'}, },
     
           // Maintenance
-          { path: 'users', component: UsersComponent, data:{title: 'Users'}, },
+          { path: 'users', component: UsersComponent, data:{title: 'Users  maintenance'}, },
+          { path: 'hospitals', component: HospitalsComponent, data:{title: 'hospitals maintenance'}, },
+          { path: 'doctors', component: DoctorsComponent, data:{title: 'Doctors maintenance'}, },
+          { path: 'doctors/:id', component: DoctorComponent, data:{title: 'Doctor maintenance'}, },
         ] 
     },
 ];

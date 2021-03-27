@@ -30,6 +30,19 @@
     display: none;
 }
 
+.container-img-center{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-titles-container {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
 #themecolors .selector, .cursor-on  {
     cursor: pointer;   
 }
