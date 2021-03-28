@@ -31,8 +31,12 @@ export class UserService {
     this.googleinit();
   }
 
-  get token():string {
+  get token(): string {
     return localStorage.getItem('token') || '';
+  }
+
+  get role(): 'ADMIN_ROLE' | 'USER_ROLE' {
+    return this.user.role;
   }
 
   get uid (): string {
@@ -105,7 +109,7 @@ export class UserService {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('menu');
-    
+
     this.auth2.signOut().then( () => {
       this.ngZone.run(() => {
         this.router.navigateByUrl('/login');
@@ -117,10 +121,11 @@ export class UserService {
     return this.http.post(`${base_url}/users`, formData)
                     .pipe(
                       tap((resp:any) => {
+                        Swal.fire('User Created', resp.email, 'success');
                         this.saveLocalStorage(resp.token, resp.menu);
                       })
                     )
-  }
+}
 
   updateProfile( data: { email: string, nombre: string, role: string }) {
 

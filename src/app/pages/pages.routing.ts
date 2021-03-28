@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
 import { AuthGuard } from '../guards/auth.guard';
+import { AdminGuard } from '../guards/admin.guard';
 
 /* Component */
 import { PagesComponent } from './pages.component';
@@ -36,10 +37,12 @@ const routes: Routes = [
           { path: 'search/:term', component: SearchComponent, data:{title: 'Search'}, },
     
           // Maintenance
-          { path: 'users', component: UsersComponent, data:{title: 'Users  maintenance'}, },
           { path: 'hospitals', component: HospitalsComponent, data:{title: 'hospitals maintenance'}, },
           { path: 'doctors', component: DoctorsComponent, data:{title: 'Doctors maintenance'}, },
           { path: 'doctors/:id', component: DoctorComponent, data:{title: 'Doctor maintenance'}, },
+
+          // Admin route
+          { path: 'users', canActivate: [ AdminGuard ], component: UsersComponent, data:{title: 'Users  maintenance'}, },
         ] 
     },
 ];
