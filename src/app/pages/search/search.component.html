@@ -1,0 +1,98 @@
+<div class="row animated fadeIn fast">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h3>Users</h3>
+
+                <div class="alert alert-info animated fadeIn fast" *ngIf="users.length === 0">
+                  <p>No users with that term</p>
+                </div>
+                
+                <div class="table-responsive animated fadeIn fast" *ngIf="users.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users" >
+                                <td>
+                                    <img class="img-thumbnail w75" [src]="user.img | image:'users'" [alt]="user.name">
+                                </td>
+                                <td>{{ user.name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h3>Doctors</h3>
+
+                <div class="alert alert-info animated fadeIn fast" *ngIf="doctors.length === 0">
+                    <p>No doctors with that term</p>
+                </div>
+                  
+                <div class="table-responsive animated fadeIn fast" *ngIf="doctors.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let doctor of doctors" 
+                                (click)="openDoctor(doctor)"
+                                class="cursor-on"
+                                >
+                                <td>
+                                    <img class="img-thumbnail w75" [src]="doctor.img | image:'doctors'" [alt]="doctor.name">
+                                </td>
+                                <td>{{ doctor.name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h3>Hospitals</h3>
+
+                <div class="alert alert-info animated fadeIn fast" *ngIf="hospitals.length === 0">
+                    <p>No hospitals with that term</p>
+                </div>
+                  
+                <div class="table-responsive animated fadeIn fast" *ngIf="hospitals.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let hospital of hospitals" >
+                                <td>
+                                    <img class="img-thumbnail w75" [src]="hospital.img | image:'hospitals'" [alt]="hospital.name">
+                                </td>
+                                <td>{{ hospital.name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>

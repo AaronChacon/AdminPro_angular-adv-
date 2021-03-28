@@ -55,8 +55,6 @@ export class DoctorComponent implements OnInit {
   loadDoctor(id: string) {
 
     if ( id === 'new' ) {
-      console.log(id);
-      
       return;
     }
 
