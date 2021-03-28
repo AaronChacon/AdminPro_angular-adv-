@@ -47,6 +47,11 @@ export class UserService {
     }
   }
 
+  saveLocalStorage(token: string, menu: any){
+    localStorage.setItem('token', token);
+    localStorage.setItem('menu', JSON.stringify(menu) );
+  }
+
   async googleinit(){
     
     return new Promise<void> ( resolve => {
@@ -72,7 +77,7 @@ export class UserService {
       map((resp:any) => {
         const { name, email, img = '', google, role, uid } = resp.user;
         this.user = new User( name, email, '', img, google, role, uid );
-        localStorage.setItem('token', resp.token);
+        this.saveLocalStorage( resp.token, resp.menu );
         return true
       }),
       catchError( error => of(false))
@@ -83,7 +88,7 @@ export class UserService {
     return this.http.post(`${base_url}/login`, formData)
                 .pipe(
                   tap((resp:any) => {
-                    localStorage.setItem('token', resp.token)
+                    this.saveLocalStorage( resp.token, resp.menu );
                   })
                 )
   }
@@ -92,13 +97,15 @@ export class UserService {
     return this.http.post(`${base_url}/login/google`, { token })
                 .pipe(
                   tap((resp:any) => {
-                    localStorage.setItem('token', resp.token)
+                    this.saveLocalStorage(resp.token, resp.menu);
                   })
                 )
   }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('menu');
+    
     this.auth2.signOut().then( () => {
       this.ngZone.run(() => {
         this.router.navigateByUrl('/login');
@@ -110,7 +117,7 @@ export class UserService {
     return this.http.post(`${base_url}/users`, formData)
                     .pipe(
                       tap((resp:any) => {
-                        localStorage.setItem('token', resp.token)
+                        this.saveLocalStorage(resp.token, resp.menu);
                       })
                     )
   }
@@ -143,16 +150,12 @@ export class UserService {
   }
 
   deleteUser(user: User) {
-    
     const url = `${ base_url }/users/${user.uid}`
     return this.http.delete( url, this.headers)
-
   }
 
   saveUser( user: User) {
-    
     return this.http.put(`${base_url}/users/${user.uid}`, user, this.headers);
-
   }
 
    
